@@ -9,7 +9,7 @@ interface PhoneFrameProps {
 
 export default function PhoneFrame({ children }: PhoneFrameProps) {
   return (
-    <div className="relative flex items-center justify-center min-h-screen w-full overflow-hidden">
+    <div className="relative flex items-center justify-center h-[100dvh] w-full overflow-hidden bg-black">
       {/* Desktop Background Blur (Only visible on large screens) - REMOVED to use global background */}
       
       {/* Phone Container */}

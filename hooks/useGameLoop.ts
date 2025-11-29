@@ -37,10 +37,10 @@ export const useGameLoop = () => {
 
         // Brightness drain (Proportional to brightness)
         const { brightness } = useGameState.getState();
-        // Base drain is 0.03. Brightness adds up to 0.05 at 100%.
-        // At 10% brightness: +0.005
-        // At 60% brightness: +0.03
-        drain += brightness * 0.0005;
+        // Base drain is 0.03. Brightness adds up to 0.2 at 100%.
+        // At 10% brightness: +0.02 (Total ~0.05)
+        // At 100% brightness: +0.2 (Total ~0.23 -> ~4.6x faster drain)
+        drain += brightness * 0.002;
 
         const newBattery = Math.max(0, prev - drain);
         
