@@ -46,7 +46,18 @@ export default function SearchApp({ onClose }: SearchAppProps) {
         return;
       }
 
-      const scenario = SCENARIOS[Math.floor(Math.random() * SCENARIOS.length)];
+      // Weighted Random Selection
+      const totalWeight = SCENARIOS.reduce((sum, scenario) => sum + scenario.weight, 0);
+      let random = Math.random() * totalWeight;
+      let scenario = SCENARIOS[0];
+
+      for (const s of SCENARIOS) {
+        random -= s.weight;
+        if (random <= 0) {
+          scenario = s;
+          break;
+        }
+      }
       
       // Apply effects
       if (scenario.effect) {

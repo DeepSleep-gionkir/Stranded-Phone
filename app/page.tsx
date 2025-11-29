@@ -29,7 +29,7 @@ type AppId = 'search' | 'messages' | 'flashlight' | 'camera' | 'settings' | 'gui
 export default function Home() {
   useGameLoop();
   const [activeApp, setActiveApp] = useState<AppId>(null);
-  const { signal, battery, isFlashlightOn, gameStatus, gameOverReason, resetGame, setGameStatus, hasSeenIntro, setHasSeenIntro } = useGameState();
+  const { signal, battery, isFlashlightOn, gameStatus, gameOverReason, resetGame, setGameStatus, hasSeenIntro, setHasSeenIntro, brightness } = useGameState();
   
   // Initialize showIntro to false to prevent flash
   const [showIntro, setShowIntro] = useState(false);
@@ -160,7 +160,7 @@ export default function Home() {
         {/* Brightness Overlay (Simulate dimming) - Placed last to cover everything */}
         <div 
           className="absolute inset-0 bg-black pointer-events-none z-[200] transition-opacity duration-300"
-          style={{ opacity: 1 - (useGameState.getState().brightness / 100) }}
+          style={{ opacity: 1 - (brightness / 100) }}
         />
 
       </PhoneFrame>
