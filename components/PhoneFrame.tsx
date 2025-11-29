@@ -14,7 +14,7 @@ export default function PhoneFrame({ children }: PhoneFrameProps) {
       
       {/* Phone Container */}
       <motion.div 
-        className="relative z-10 w-[min(375px,92vw)] h-[min(812px,95vh)] rounded-[2.5rem] border-[6px] md:border-[8px] border-zinc-800 bg-black/30 overflow-hidden shadow-2xl backdrop-blur-sm"
+        className="relative z-10 w-[min(375px,92vw)] h-[min(812px,90dvh)] rounded-[2.5rem] border-[6px] md:border-[8px] border-zinc-800 bg-black/30 overflow-hidden shadow-2xl backdrop-blur-sm"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
