@@ -56,7 +56,7 @@ export const INITIAL_STATE: GameState = {
   gameStatus: 'playing',
   gameOverReason: null,
   hasSeenIntro: false,
-  brightness: 60, // Default brightness
+  brightness: 40, // Default brightness
   explorationLog: [],
 };
 
